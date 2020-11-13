@@ -21,7 +21,7 @@ public class LoginAction extends ActionSupport {
       try {
          String URL = "jdbc:mysql://localhost/struts_tutorial?useSSL=false";
          Class.forName("com.mysql.jdbc.Driver");
-         conn = DriverManager.getConnection(URL, "root", "65541730");
+         conn = DriverManager.getConnection(URL, "root", "Ase123456");
          String sql = "SELECT name FROM login WHERE";
          sql+=" user = ? AND password = ?";
          PreparedStatement ps = conn.prepareStatement(sql);
