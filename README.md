@@ -7,6 +7,7 @@ Making a web application with Struts.
 - Rename helloworld directories to suitable name
 - Shift success and error jsp files into model instead
 - CSS for login, success and error pages
+- .war file for Servlet container in Tomcat (required?)
 
 
 ## Run locally
