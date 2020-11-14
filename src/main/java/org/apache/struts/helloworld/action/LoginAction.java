@@ -4,6 +4,7 @@ package org.apache.struts.helloworld.action;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.sql.ResultSet;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -14,15 +15,21 @@ public class LoginAction extends ActionSupport {
    private String password;
    private String name;
 
+   private String USERNAME = "root";
+   private String PASSWORD = "toor";
+   private String mainURL = "jdbc:mysql://localhost/?useSSL=false";
+
    public String execute() {
       String ret = ERROR;
       Connection conn = null;
 
       try {
-         String URL = "jdbc:mysql://localhost/struts_tutorial?useSSL=false";
+         createTable();
+
+         String URL = "jdbc:mysql://localhost/ase_assignment2?useSSL=false";
          Class.forName("com.mysql.jdbc.Driver");
-         conn = DriverManager.getConnection(URL, "root", "Ase123456");
-         String sql = "SELECT name FROM login WHERE";
+         conn = DriverManager.getConnection(URL, "root", "toor");
+         String sql = "SELECT name FROM useraccounts WHERE";
          sql+=" user = ? AND password = ?";
          PreparedStatement ps = conn.prepareStatement(sql);
          ps.setString(1, user);
@@ -44,6 +51,41 @@ public class LoginAction extends ActionSupport {
          }
       }
       return ret;
+   }
+
+   public void createTable () {
+      Connection conn = null;
+      Statement stmt = null;
+
+      try{
+            //STEP 2: Register JDBC driver
+            Class.forName("com.mysql.jdbc.Driver");
+
+            //STEP 3: Open a connection
+            conn = DriverManager.getConnection(mainURL, USERNAME, PASSWORD);
+
+            //STEP 4: Execute a query
+            stmt = conn.createStatement();
+
+            String sql = "create schema if not exists `ase_assignment2`";
+            stmt.executeUpdate(sql);
+      }catch(Exception e){
+            e.printStackTrace();
+      }finally{
+            try{
+               if(stmt!=null)
+                  stmt.close();
+               }
+            catch(Exception e){
+               e.printStackTrace();
+               }
+            try{
+               if(conn!=null)
+                  conn.close();
+               }catch(Exception e){
+                  e.printStackTrace();
+               }
+            }
    }
 
    public String getUser() {
