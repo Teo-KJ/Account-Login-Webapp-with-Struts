@@ -29,7 +29,7 @@ My MYSQL database has the username "root" and "Ase123456" password
 
 `mysql -uroot -pAse123456`
 
-> to do any mysql queries in terminal
+> to do any mysql queries in terminal (no longer needed to manually create table into MySql)
 
 ```mysql
 CREATE TABLE `ase_assignment2`.`useraccounts` (

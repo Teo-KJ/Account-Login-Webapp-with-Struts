@@ -31,6 +31,7 @@ public class LoginAction extends ActionSupport {
          conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
          String sql = "SELECT name FROM useraccounts WHERE";
          sql+=" user = ? AND password = ?";
+        
          PreparedStatement ps = conn.prepareStatement(sql);
          ps.setString(1, user);
          ps.setString(2, password);
@@ -69,6 +70,12 @@ public class LoginAction extends ActionSupport {
 
             String sql = "create schema if not exists `ase_assignment2`";
             stmt.executeUpdate(sql);
+
+            String insert = "CREATE TABLE if not exists `ase_assignment2`.`useraccounts`(`user` VARCHAR(10) NOT NULL," + 
+                            "`password` VARCHAR( 10 ) NOT NULL, `name` VARCHAR( 20 ) NOT NULL ," +
+                            "PRIMARY KEY (`user`)) ENGINE = InnoDB;";
+            stmt.executeUpdate(insert);
+
       }catch(Exception e){
             e.printStackTrace();
       }finally{
