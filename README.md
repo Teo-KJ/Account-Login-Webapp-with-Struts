@@ -32,7 +32,7 @@ My MYSQL database has the username "root" and "Ase123456" password
 > to do any mysql queries in terminal
 
 ```mysql
-CREATE TABLE `struts_tutorial`.`login` (
+CREATE TABLE `ase_assignment2`.`useraccounts` (
    `user` VARCHAR( 10 ) NOT NULL ,
    `password` VARCHAR( 10 ) NOT NULL ,
    `name` VARCHAR( 20 ) NOT NULL ,
@@ -43,7 +43,7 @@ CREATE TABLE `struts_tutorial`.`login` (
 > create inital table, can vary the maximum length :) 
 
 ```mysql
-INSERT INTO `struts_tutorial`.`login` (`user`, `password`, `name`)
+INSERT INTO `ase_assignment2`.`useraccounts` (`user`, `password`, `name`)
 VALUES ('admin', 'password', 'Group 66');
 ```
 
