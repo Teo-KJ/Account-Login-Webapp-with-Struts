@@ -16,7 +16,7 @@ public class LoginAction extends ActionSupport {
    private String name;
 
    private String USERNAME = "root";
-   private String PASSWORD = "toor";
+   private String PASSWORD = "Ase123456";
    private String mainURL = "jdbc:mysql://localhost/?useSSL=false";
 
    public String execute() {
@@ -28,7 +28,7 @@ public class LoginAction extends ActionSupport {
 
          String URL = "jdbc:mysql://localhost/ase_assignment2?useSSL=false";
          Class.forName("com.mysql.jdbc.Driver");
-         conn = DriverManager.getConnection(URL, "root", "toor");
+         conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
          String sql = "SELECT name FROM useraccounts WHERE";
          sql+=" user = ? AND password = ?";
          PreparedStatement ps = conn.prepareStatement(sql);
