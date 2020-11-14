@@ -9,10 +9,15 @@ Making a web application with Struts.
 - CSS for login, success and error pages
 - .war file for Servlet container in Tomcat (required?)
 
-
 ## Run locally
 
+### Install Maven and JDK before execution
+* Download [JDK](https://www.oracle.com/java/technologies/javase-jdk15-downloads.html)
+* Follow the [steps](https://stackoverflow.com/questions/2619584/how-to-set-java-home-on-windows-7) here and set JDK to correct path for Maven to run.
+* Download [Maven](https://apachemirror.sg.wuchna.com/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz)
+
 ### Maven
+`set PATH="c:\program files\apache-maven-3.6.3\bin";%PATH%`
 
 `mvn jetty:run`
 
