@@ -46,6 +46,46 @@ public class LoginAction extends ActionSupport {
       return ret;
    }
 
+   public void createTable () {
+      Connection conn = null;
+      Statement stmt = null;
+
+      try{
+            //STEP 2: Register JDBC driver
+            Class.forName("com.mysql.jdbc.Driver");
+
+            //STEP 3: Open a connection
+            conn = DriverManager.getConnection(mainURL, USERNAME, PASSWORD);
+
+            //STEP 4: Execute a query
+            stmt = conn.createStatement();
+
+            String sql = "create schema if not exists `ase_assignment2`";
+            stmt.executeUpdate(sql);
+            String insert = "CREATE TABLE if not exists `ase_assignment2`.`useraccounts`(`user` VARCHAR(10) NOT NULL," + 
+                            "`password` VARCHAR( 10 ) NOT NULL, `name` VARCHAR( 20 ) NOT NULL ," +
+                            "PRIMARY KEY (`user`)) ENGINE = InnoDB;";
+            stmt.executeUpdate(insert);
+
+      }catch(Exception e){
+            e.printStackTrace();
+      }finally{
+            try{
+               if(stmt!=null)
+                  stmt.close();
+               }
+            catch(Exception e){
+               e.printStackTrace();
+               }
+            try{
+               if(conn!=null)
+                  conn.close();
+               }catch(Exception e){
+                  e.printStackTrace();
+               }
+            }
+   }
+
    public String getUser() {
       return user;
    }
