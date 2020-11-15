@@ -76,6 +76,15 @@ public class LoginAction extends ActionSupport {
                             "PRIMARY KEY (`user`)) ENGINE = InnoDB;";
             stmt.executeUpdate(insert);
 
+            try{
+               String defaultUser = "INSERT INTO `ase_assignment2`.`useraccounts` (`user`, `password`, `name`)" +
+                                    "VALUES ('admin', 'password', 'Group 66');";
+               stmt.executeUpdate(defaultUser);
+            }
+            catch(Exception e){
+
+            }
+
       }catch(Exception e){
             e.printStackTrace();
       }finally{
