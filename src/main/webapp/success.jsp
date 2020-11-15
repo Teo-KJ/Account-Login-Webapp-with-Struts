@@ -12,13 +12,14 @@
             left: 50%;
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
+            font-family: sans-serif;
          }
       </style>
    </head>
 
 
    <body class="center">
-      <h3>Successful login, <s:property value = "name"/></h3>
+      <h2>Successful login, <s:property value = "name"/></h2>
    </body>
 
 </html>
