@@ -29,7 +29,7 @@ My MYSQL database has the username "root" and "Ase123456" password
 
 `mysql -uroot -pAse123456`
 
-> to do any mysql queries in terminal (no longer needed to manually create table into MySql)
+> to do any mysql queries in terminal (no longer needed to manually create schema into MySql)
 
 ```mysql
 CREATE TABLE `ase_assignment2`.`useraccounts` (
@@ -40,7 +40,9 @@ CREATE TABLE `ase_assignment2`.`useraccounts` (
 ) ENGINE = InnoDB;
 ```
 
-> create inital table, can vary the maximum length :) 
+> create inital table, can vary the maximum length :)
+
+> (no longer needed to manually create table into MySql)
 
 ```mysql
 INSERT INTO `ase_assignment2`.`useraccounts` (`user`, `password`, `name`)
