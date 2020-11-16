@@ -19,7 +19,7 @@
 
 
    <body class="center">
-      <h2>Successful login, <s:property value = "name"/></h2>
+      <h2>Successful login, <s:property value = "personBean.name"/></h2>
    </body>
 
 </html>
