@@ -6,7 +6,7 @@
 <struts>
 
 	<constant name="struts.devMode" value="true" />
-    <constant name="struts.ui.theme" value="simple" />
+    <constant name="struts.ui.theme" value="simple" /> <!-- for easier css in input --> 
 
 	<package name="basicstruts2" extends="struts-default">
 
