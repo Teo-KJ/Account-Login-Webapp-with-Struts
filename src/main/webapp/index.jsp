@@ -39,8 +39,14 @@
             margin-bottom: 24px;
             color: #222;
          }
+         label {
+            float: left;
+            text-align: right;
+            margin: 1px 0 30px 0;
+         }
          .container form .form-control{
-            width: 100%;
+            float: right;
+            width: 70%;
             height: 40px;
             font-size: 16px;
             background: white;
@@ -74,23 +80,15 @@
    
    <body>
       <div class="container">
-        <!-- <form action = "loginaction" method = "post">
-          <h2>Login Here</h2>
-          <div class = "form-group">
-             <label for=""> User:</label>
-             <input type = "text" name = "user" class = "form-control"><br/>
-          </div>
-          <div>
-             <label for=""> Password:</label>
-             <input type = "password" name = "password" class = "form-control"><br/>
-          </div>
-          <input type = "submit" class = "btn" value = "Login">
-       </form> -->
-       <h2>Login Here</h2>
          <s:form action="loginaction" >
-           <s:textfield name="user" label="User" class = "form-control" />
-           <s:password name="password" label="Password" class = "form-control" />
-           <s:submit value="submit" class = "btn" />
+           <h2>Login Here</h2>
+           <div class = "form-group">
+             <label for="user">User: </label>
+             <s:textfield name="user" class = "form-control" />
+             <label for="password">Password: </label>
+             <s:password name="password" class = "form-control" />
+             <s:submit value="submit" class = "btn" />
+           </div>  
          </s:form>
       </div>
    </body>
