@@ -1,7 +1,7 @@
 // package com.tutorialspoint.struts2;
-package org.apache.struts.helloworld.action;
+package org.apache.struts.simplelogin.action;
 
-import org.apache.struts.helloworld.model.Person;
+import org.apache.struts.simplelogin.model.Person;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

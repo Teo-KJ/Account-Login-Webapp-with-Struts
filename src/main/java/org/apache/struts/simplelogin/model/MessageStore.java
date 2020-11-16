@@ -1,4 +1,4 @@
-package org.apache.struts.helloworld.model;
+package org.apache.struts.simplelogin.model;
 
 /**
  * Model class that stores a message.

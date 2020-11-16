@@ -1,4 +1,4 @@
-package org.apache.struts.helloworld.model;
+package org.apache.struts.simplelogin.model;
 
 /**
  * Models a user that exist in the local MySql database
