@@ -6,6 +6,7 @@
 <struts>
 
 	<constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple" /> <!-- for easier css in input --> 
 
 	<package name="basicstruts2" extends="struts-default">
 
@@ -22,7 +23,7 @@
 			<result name="success">/HelloWorld.jsp</result>
 		</action> -->
         <action name = "loginaction" 
-            class = "org.apache.struts.helloworld.action.LoginAction"
+            class = "org.apache.struts.simplelogin.action.LoginAction"
             method = "execute">
             <result name = "success">/success.jsp</result>
             <result name = "error">/index.jsp</result>

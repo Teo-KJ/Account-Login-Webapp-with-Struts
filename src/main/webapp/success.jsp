@@ -1,5 +1,6 @@
-<%@ page contentType = "text/html; charset = UTF-8" %>
-<%@ taglib prefix = "s" uri = "/struts-tags" %>
+<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 
 <html>
    <head>
@@ -19,7 +20,7 @@
 
 
    <body class="center">
-      <h2>Successful login, <s:property value = "name"/></h2>
+      <h2>Successful login, <s:property value = "personBean.name"/></h2>
    </body>
 
 </html>

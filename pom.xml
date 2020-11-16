@@ -6,9 +6,9 @@
     <groupId>org.apache.ase-assignment</groupId>
     <version>1.1.0</version>
 
-    <artifactId>helloworld</artifactId>
-    <name>Hello World Struts 2 Example Application</name>
-    <description>Hello world example application for the Struts 2 Getting Started tutorials</description>
+    <artifactId>simplelogin</artifactId>
+    <name>CZ3002 Advance Software Engineering Assignment 2 Application</name>
+    <description>Application for CZ3002</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -60,7 +60,7 @@
 
     <build>
 
-        <finalName>hello-world</finalName>
+        <finalName>simple-login</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -1,6 +1,7 @@
-<%@ page language = "java" contentType = "text/html; charset = ISO-8859-1"
-   pageEncoding = "ISO-8859-1"%>
-<%@ taglib prefix = "s" uri = "/struts-tags"%>
+<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
    "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -31,14 +32,21 @@
             background: white;
             border-radius: 4px;
             box-shadow: 0 8px 16px rgba(0,0,0,.3);
+            font-size: x-large;
          }
          .container form h2{
             text-align: center;
             margin-bottom: 24px;
             color: #222;
          }
+         label {
+            float: left;
+            text-align: right;
+            margin: 1px 0 30px 0;
+         }
          .container form .form-control{
-            width: 100%;
+            float: right;
+            width: 70%;
             height: 40px;
             font-size: 16px;
             background: white;
@@ -71,19 +79,17 @@
    </head>
    
    <body>
-      <div  class="container">
-         <form action = "loginaction" method = "post">
-            <h2>Login Here</h2>
-            <div class = "form-group">
-               <label for=""> User:</label>
-               <input type = "text" name = "user" class = "form-control"><br/>
-            </div>
-            <div>
-               <label for=""> Password:</label>
-               <input type = "password" name = "password" class = "form-control"><br/>
-            </div>
-            <input type = "submit" class = "btn" value = "Login">
-         </form>
+      <div class="container">
+         <s:form action="loginaction" >
+           <h2>Login Here</h2>
+           <div class = "form-group">
+             <label for="user">User: </label>
+             <s:textfield name="user" class = "form-control" />
+             <label for="password">Password: </label>
+             <s:password name="password" class = "form-control" />
+             <s:submit value="submit" class = "btn" />
+           </div>  
+         </s:form>
       </div>
    </body>
 </html>

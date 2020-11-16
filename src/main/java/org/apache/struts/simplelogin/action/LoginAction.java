@@ -1,5 +1,7 @@
 // package com.tutorialspoint.struts2;
-package org.apache.struts.helloworld.action;
+package org.apache.struts.simplelogin.action;
+
+import org.apache.struts.simplelogin.model.Person;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,15 +13,18 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport {
 
+    private Person personBean;
+
    private String user;
    private String password;
    private String name;
 
    private String USERNAME = "root";
    private String PASSWORD = "Ase123456";
-   private String mainURL = "jdbc:mysql://localhost/?useSSL=false";
+   private String mainURL = "jdbc:mysql://localhost/?useSSL=false&allowPublicKeyRetrieval=true";
 
    public String execute() {
+       personBean = new Person();
       String ret = ERROR;
       Connection conn = null;
 
@@ -39,6 +44,7 @@ public class LoginAction extends ActionSupport {
 
          while (rs.next()) {
             name = rs.getString(1);
+            personBean.setName(name);
             ret = SUCCESS;
          }
       } catch (Exception e) {
@@ -126,5 +132,12 @@ public class LoginAction extends ActionSupport {
 
    public void setName(String name) {
       this.name = name;
+   }
+
+   public Person getPersonBean() {
+       return personBean;
+   }
+   public void setPersonBean(Person person) {
+       personBean = person;
    }
 }
