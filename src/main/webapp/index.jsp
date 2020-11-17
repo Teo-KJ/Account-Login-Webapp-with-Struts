@@ -84,9 +84,9 @@
            <h2>Login Here</h2>
            <div class = "form-group">
              <label for="user">User: </label>
-             <s:textfield name="user" class = "form-control" />
+             <s:textfield name="personBean.user" class = "form-control" />
              <label for="password">Password: </label>
-             <s:password name="password" class = "form-control" />
+             <s:password name="personBean.password" class = "form-control" />
              <s:submit value="submit" class = "btn" />
            </div>  
          </s:form>

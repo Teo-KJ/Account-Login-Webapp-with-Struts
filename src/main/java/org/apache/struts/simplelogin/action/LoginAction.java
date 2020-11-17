@@ -1,4 +1,3 @@
-// package com.tutorialspoint.struts2;
 package org.apache.struts.simplelogin.action;
 
 import org.apache.struts.simplelogin.model.Person;
@@ -24,8 +23,7 @@ public class LoginAction extends ActionSupport {
    private String mainURL = "jdbc:mysql://localhost/?useSSL=false&allowPublicKeyRetrieval=true";
 
    public String execute() {
-       personBean = new Person();
-      String ret = ERROR;
+    //   String ret = ERROR;
       Connection conn = null;
 
       try {
@@ -38,6 +36,8 @@ public class LoginAction extends ActionSupport {
          sql+=" user = ? AND password = ?";
         
          PreparedStatement ps = conn.prepareStatement(sql);
+         user = personBean.getUser();
+         password = personBean.getPassword();
          ps.setString(1, user);
          ps.setString(2, password);
          ResultSet rs = ps.executeQuery();
@@ -45,10 +45,11 @@ public class LoginAction extends ActionSupport {
          while (rs.next()) {
             name = rs.getString(1);
             personBean.setName(name);
-            ret = SUCCESS;
+            return SUCCESS;
+            // ret = SUCCESS;
          }
       } catch (Exception e) {
-         ret = ERROR;
+        //  ret = ERROR;
       } finally {
          if (conn != null) {
             try {
@@ -57,7 +58,20 @@ public class LoginAction extends ActionSupport {
             }
          }
       }
-      return ret;
+    //   return ret;
+    return INPUT;
+   }
+
+   public void validate() {
+        if (personBean == null) {
+            setPersonBean(person);
+        }
+        if (personBean.getUser().length() == 0) {
+            addFieldError("personBean.user", "Username is required");
+        }
+        if (personBean.getPassword().length() == 0) {
+            addFieldError("personBean.password", "Password is required");
+        }
    }
 
    public void createTable () {
@@ -110,34 +124,11 @@ public class LoginAction extends ActionSupport {
             }
    }
 
-   public String getUser() {
-      return user;
-   }
-
-   public void setUser(String user) {
-      this.user = user;
-   }
-
-   public String getPassword() {
-      return password;
-   }
-
-   public void setPassword(String password) {
-      this.password = password;
-   }
-
-   public String getName() {
-      return name;
-   }
-
-   public void setName(String name) {
-      this.name = name;
-   }
-
    public Person getPersonBean() {
        return personBean;
    }
    public void setPersonBean(Person person) {
        personBean = person;
    }
+
 }
