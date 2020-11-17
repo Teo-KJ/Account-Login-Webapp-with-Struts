@@ -12,10 +12,12 @@
 
         <!-- If no class attribute is specified the framework will assume success and 
         render the result index.jsp -->
+        <!-- <default-action-ref name="index"/> -->
+
         <!-- If no name value for the result node is specified the success value is the default -->
-		<action name="index">
+		<!-- <action name="index">
 			<result>/index.jsp</result>
-		</action>
+		</action> -->
 		
 		<!-- If the URL is hello.action then call the execute method of class HelloWorldAction.
 		If the result returned by the execute method is success render the HelloWorld.jsp -->
@@ -25,8 +27,9 @@
         <action name = "loginaction" 
             class = "org.apache.struts.simplelogin.action.LoginAction"
             method = "execute">
-            <result name = "success">/success.jsp</result>
-            <result name = "error">/index.jsp</result>
+            <!-- <result name ="error">/index.jsp</result> -->
+            <result name="success">/success.jsp</result>
+            <result name="input">/index.jsp</result>
         </action>
 	</package>
 
