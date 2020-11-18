@@ -22,7 +22,7 @@ Making a web application with Struts.
 
 `mvn jetty:run`
 
-> Web app will be up @ [http://localhost:8080/simplelogin/index.action](http://localhost:8080/simplelogin/loginaction.action)
+> Web app will be up @ [http://localhost:8080/simplelogin/index.action](http://localhost:8080/simplelogin/index.action)
 
 ### MySql
 
