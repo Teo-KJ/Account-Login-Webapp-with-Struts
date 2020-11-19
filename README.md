@@ -18,19 +18,23 @@ Making a web application with Struts.
 * Download [Maven](https://apachemirror.sg.wuchna.com/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz)
 
 ### Maven
+From the root directory:
+
 `set PATH="c:\program files\apache-maven-3.6.3\bin";%PATH%`
+
+Followed by:
 
 `mvn jetty:run`
 
 > Web app will be up @ [http://localhost:8080/simplelogin/index.action](http://localhost:8080/simplelogin/index.action)
 
-### MySql
+### MySQL
 
 My MYSQL database has the username "root" and "Ase123456" password
 
 `mysql -uroot -pAse123456`
 
-> to do any mysql queries in terminal (no longer needed to manually create schema into MySql)
+> To do any mysql queries in terminal
 
 ```mysql
 CREATE TABLE `ase_assignment2`.`useraccounts` (
@@ -41,16 +45,16 @@ CREATE TABLE `ase_assignment2`.`useraccounts` (
 ) ENGINE = InnoDB;
 ```
 
-> create inital table, can vary the maximum length :)
+> Create inital table, can vary the maximum length :)
 
-> (no longer needed to manually create table into MySql)
+> (no longer needed to manually create table into MySQL)
 
 ```mysql
 INSERT INTO `ase_assignment2`.`useraccounts` (`user`, `password`, `name`)
 VALUES ('admin', 'password', 'Group 66');
 ```
 
-> create ase admin credentials
+> Create ase admin credentials (no longer needed to manually insert admin credentials into MySQL)
 
 ## Images
 
