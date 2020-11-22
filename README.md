@@ -2,14 +2,6 @@
 ## NTU CZ3002 Advanced Software Engineering - Group 66
 Making a web application with Struts.
 
-## TODO
-
-- ~~Rename helloworld directories to suitable name~~
-- ~~Shift success and error jsp files into model instead~~
-- ~~CSS for login, success and error pages~~
-- Login verification
-- .war file for Servlet container in Tomcat (required?)
-
 ## Run locally
 
 ### Install Maven and JDK before execution
