@@ -1,6 +1,11 @@
-# ASE-Assignment
+# Account-Login-Webapp-with-Struts
+A web application for account login built with Struts.
+
 ## NTU CZ3002 Advanced Software Engineering - Group 66
-Making a web application with Struts.
+This project is jointly developed by the following members.
+* [Sheng Rong](https://github.com/TanShengRong)
+* [Chen Ping](https://github.com/c-ping)
+* [Kai Jie](https://github.com/Teo-KJ)
 
 ## Run locally
 
