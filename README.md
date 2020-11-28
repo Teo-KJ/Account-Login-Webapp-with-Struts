@@ -62,3 +62,9 @@ VALUES ('admin', 'password', 'Group 66');
 ### Login Success
 
 ![login_success](./assets/success.png)
+
+### Login Failure
+User is to retry login
+
+![login_failure](./assets/error.PNG)
+
